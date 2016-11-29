@@ -1,0 +1,31 @@
+{
+  "name": "ideationnet/stack-runner",
+  "type": "library",
+  "description": "Simple stack-runner for PSR-15 compatible middleware",
+  "keywords": ["ideationnet", "stack-runner"],
+  "homepage": "https://github.com/ideationnet/stack-runner",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Darren Mothersele",
+      "email": "darren@darrenmothersele.com",
+      "homepage": "http://www.darrenmothersele.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "~7.0",
+    "http-interop/http-middleware": "^0.3.0",
+    "http-interop/http-factory": "^0.2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "IdNet\\StackRunner\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
