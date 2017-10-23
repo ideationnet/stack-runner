@@ -1,6 +1,7 @@
 dist: trusty
 language: php
 
+# test on PHP7 only
 php:
   - 7.0
   - 7.1

@@ -14,6 +14,7 @@ where Delegate has been replaced with ResponseHandler.
 
 ## Requirements
 
+ * PHP7+
  * A stack of [PSR-15](https://github.com/http-interop/http-middleware) middleware, such as [Router](https://github.com/ideationnet/router-middleware) or [Middlewares](https://github.com/middlewares/psr15-middlewares)
  * A [PSR-17 HTTP factory](https://github.com/http-interop/http-factory)
  * An invoker compatible with [InvokerInterface](https://github.com/PHP-DI/Invoker/blob/master/src/InvokerInterface.php)
