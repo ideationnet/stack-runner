@@ -12,7 +12,6 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class StackRunnerTest extends TestCase
 {
-
     public function testEmptyStackRunner()
     {
         $runner = $this->getStackRunner([]);
