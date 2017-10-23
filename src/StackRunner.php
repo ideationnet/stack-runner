@@ -3,11 +3,11 @@
 namespace IdNet\StackRunner;
 
 use Interop\Http\Factory\ResponseFactoryInterface;
-use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\Server\RequestHandlerInterface;
 use Invoker\InvokerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class StackRunner implements DelegateInterface
+class StackRunner implements RequestHandlerInterface
 {
     /** @var InvokerInterface */
     protected $invoker;
@@ -29,7 +29,7 @@ class StackRunner implements DelegateInterface
         $this->responseFactory = $responseFactory;
     }
 
-    public function process(ServerRequestInterface $request)
+    public function handle(ServerRequestInterface $request)
     {
         if (!isset($this->stack[$this->current])) {
             return $this->responseFactory->createResponse();
@@ -40,7 +40,7 @@ class StackRunner implements DelegateInterface
 
         return $this->invoker->call([$middleware, 'process'], [
             'request' => $request,
-            'delegate' => $this,
+            'handler' => $this,
         ]);
     }
 }

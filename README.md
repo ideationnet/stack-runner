@@ -2,6 +2,9 @@
 
 A simple PSR-15 compatible middleware dispatcher. 
 
+__v3 breaking changes__: updated to use "http-interop/http-middleware" v0.5
+where Delegate has been replaced with ResponseHandler.
+
 ## Requirements
 
  * A stack of [PSR-15](https://github.com/http-interop/http-middleware) middleware, such as [Router](https://github.com/ideationnet/router-middleware) or [Middlewares](https://github.com/middlewares/psr15-middlewares)
