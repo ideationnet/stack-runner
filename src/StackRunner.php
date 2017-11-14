@@ -5,6 +5,7 @@ namespace IdNet\StackRunner;
 use Interop\Http\Factory\ResponseFactoryInterface;
 use Interop\Http\Server\RequestHandlerInterface;
 use Invoker\InvokerInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class StackRunner implements RequestHandlerInterface
@@ -29,7 +30,7 @@ class StackRunner implements RequestHandlerInterface
         $this->responseFactory = $responseFactory;
     }
 
-    public function handle(ServerRequestInterface $request)
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
         if (!isset($this->stack[$this->current])) {
             return $this->responseFactory->createResponse();
